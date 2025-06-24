@@ -1,5 +1,5 @@
 /*============================================================
-Description: Load daily work items mto be worked each day. Items worked from prior
+Description: Load daily work items to be worked each day. Items worked from prior
 day should be moved to archive while those items not yet worked need to remain
 in the 'current day' subset to be worked. A new set of items to work will be loaded
 each day. Since the source of authority is another system, items from prior days
@@ -92,7 +92,7 @@ BEGIN
               , [Address1]
               , [Address2]
               , [PostalCode])
-         SELECT [AccountId
+         SELECT [AccountId]
               , [BusinessUnitId]
               , [Name]
               /* PO Box should be saved here when there is no street address. Some business system reason. */

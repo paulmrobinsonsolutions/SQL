@@ -43,11 +43,11 @@ BEGIN
     INSERT INTO @HolidaysTable
     VALUES (@Date, 'New Years Day', DATENAME(dw, @Date));
 
-    /* Martin L. King's BDay (3rd Monday in January) */
+    /* Martin L. King Jr's BDay (3rd Monday in January) */
     SET @Date = CONVERT(DATETIME, CONVERT(VARCHAR, YEAR(@Year)) + '-01-01');
     SET @HolidayDate = DATEADD(wk, DATEDIFF(wk, 0, DATEADD(dd, 18 - DATEPART(DAY, @Date), @Date)), 0) -- 3rd Monday of month
     INSERT INTO @HolidaysTable
-    VALUES (@HolidayDate, 'New Years Day', DATENAME(dw, @HolidayDate));
+    VALUES (@HolidayDate, 'Martin Luther King Jr BDay', DATENAME(dw, @HolidayDate));
 
     /* President's Day (3rd Monday in January) */
     SET @Date = CONVERT(DATETIME, CONVERT(VARCHAR, YEAR(@Year)) + '-02-01');
