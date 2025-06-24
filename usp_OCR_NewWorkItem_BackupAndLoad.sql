@@ -1,10 +1,9 @@
 /*============================================================
---- Description ---
-Load daily work items mto be worked each day. Items worked from prior
-day should be moved to archive while those items not yet worked need to
-remain in the 'current day' subset to be worked. A new set of items to
-work will be loaded each day. Since the source of authority is another
-system, items from prior days deemed not 'complete' will be brought back in.
+Description: Load daily work items mto be worked each day. Items worked from prior
+day should be moved to archive while those items not yet worked need to remain
+in the 'current day' subset to be worked. A new set of items to work will be loaded
+each day. Since the source of authority is another system, items from prior days
+deemed not 'complete' will be brought back in.
 
 --- Requirements ---
 1. Check that new items were received. This may not happen every day.
@@ -12,6 +11,7 @@ system, items from prior days deemed not 'complete' will be brought back in.
 3. Move 'current day' work items to 'backup' table.
 4. Move new items into 'current day' table *excluding* items that have 
    already been worked (based on Id in 'archive' table)
+============================================================
    
 ------   Change Log   ------
 DATE     NAME    DESCRIPTION

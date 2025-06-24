@@ -13,7 +13,7 @@ completion time of each running process. Because knowing is half the battle.
 ------   Change Log   ------
 DATE     NAME    DESCRIPTION
 ------------------------------------------------------------
-
+01/18/22 Paul R. Added more cool stuff.
 
 ============================================================*/
 CREATE PROCEDURE [dbo].[usp_GetLiveSessions_WithQueueMeasures]
