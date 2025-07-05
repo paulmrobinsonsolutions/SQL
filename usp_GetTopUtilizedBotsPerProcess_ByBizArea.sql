@@ -11,8 +11,8 @@ DATE     NAME    DESCRIPTION
 ------------------------------------------------------------
 
 DECLARE @FromDate DATE = DATEADD(DAY, -10, GETDATE());
-DECLARE @FromDate DATE = GETDATE()-1;
-DECLARE @FromDate DATE = 'AMO';
+DECLARE @ToDate DATE = GETDATE()-1;
+DECLARE @BizArea NVARCHAR(10) = 'AMO';
 
 EXEC [dbo].[usp_GetTopUtilizedBotsPerProcess_ByBizArea] @FromDate, @ToDate, @BizArea
 
