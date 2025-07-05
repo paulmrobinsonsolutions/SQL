@@ -114,6 +114,10 @@ BEGIN
         SET @Date = @Date + 1
     INSERT INTO @HolidaysTable
     VALUES (@Date, 'New Years Eve', DATENAME(dw, @Date));
+
+    --SELECT *
+    --  FROM @HolidaysTable ht
+    -- WHERE @DateToEval = HolidayDate
     
     /* Return only the first result.
        1. If a date match was made then 'Y' (Yes) is returned
@@ -124,11 +128,13 @@ BEGIN
                   SELECT 'Y' AS ResultValue
                     FROM @HolidaysTable
                    WHERE @DateToEval = HolidayDate
-                  UNION ALL
+                   UNION
                   SELECT 'N'
-              ) dt
+                 ) dt
+            /* 'Y' should be checked first so sort Descending order; Y -> N... */
+            ORDER BY 1 DESC
            )
 
-    SELECT @ResultValue;
+    RETURN @ResultValue;
 
 END
